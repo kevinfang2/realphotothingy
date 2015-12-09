@@ -1,58 +1,63 @@
 //
 //  ViewController.m
-//  realphotothing
+//  MapKitDemo
 //
-//  Created by Kevin Fang on 12/8/15.
-//  Copyright © 2015 Kevin Fang. All rights reserved.
+//  Created by TheAppGuruz-iOS-103 on 09/03/15.
+//  Copyright (c) 2015 TheAppGururz. All rights reserved.
 //
 
 #import "ViewController.h"
-#import <Mapkit/Mapkit.h>
-#import <CoreLocation/CoreLocation.h>
-
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet MKMapView *mapview;
 
 @end
 
 @implementation ViewController
-#define METERS_PER_MILE 1609.344
+
+@synthesize objMapView;
 
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-
-    
+    [self loadUserLocation];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (void) loadUserLocation
+{
+    objLocationManager = [[CLLocationManager alloc] init];
+    objLocationManager.delegate = self;
+    objLocationManager.distanceFilter = kCLDistanceFilterNone;
+    objLocationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    if ([objLocationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [objLocationManager requestWhenInUseAuthorization];
+    }
+    [objLocationManager startUpdatingLocation];
 }
 
--(void) findLocation{
-    CLLocationCoordinate2D location = [[[_mapview userLocation] location] coordinate];
-    NSLog(@"Location found from Map: %f %f",location.latitude,location.longitude);
-    
+- (void)locationManager:(CLLocationManager *)manager
+     didUpdateLocations:(NSArray *)locations __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_6_0)
+{
+    CLLocation *newLocation = [locations objectAtIndex:0];
+    latitude_UserLocation = newLocation.coordinate.latitude;
+    longitude_UserLocation = newLocation.coordinate.longitude;
+    [objLocationManager stopUpdatingLocation];
+    [self loadMapView];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    // 1
+- (void)locationManager:(CLLocationManager *)manager
+       didFailWithError:(NSError *)error
+{
+    [objLocationManager stopUpdatingLocation];
+}
 
-    
-    CLLocationCoordinate2D zoomLocation;
-//    zoomLocation.latitude = location.latitude;
-//    zoomLocation.longitude= location.longitude;
-    zoomLocation.latitude = 5;
-    zoomLocation.longitude = 6;
-    NSLog(@"locationfound:from map: %f %f",zoomLocation.latitude,zoomLocation.longitude);
-    // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-    
-    // 3
-    [_mapView setRegion:viewRegion animated:YES];
+- (void) loadMapView
+{
+    CLLocationCoordinate2D objCoor2D = {.latitude =  latitude_UserLocation, .longitude =  longitude_UserLocation};
+    MKCoordinateSpan objCoorSpan = {.latitudeDelta =  0.2, .longitudeDelta =  0.2};
+    MKCoordinateRegion objMapRegion = {objCoor2D, objCoorSpan};
+    [objMapView setRegion:objMapRegion];
 }
 
 @end
