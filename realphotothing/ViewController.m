@@ -16,12 +16,19 @@
 
 @synthesize objMapView;
 
+- (IBAction)plusButton:(id)sender {
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self loadUserLocation];
+    [self.objMapView setShowsUserLocation:YES];
+
 }
+
+
 
 
 - (void) loadUserLocation

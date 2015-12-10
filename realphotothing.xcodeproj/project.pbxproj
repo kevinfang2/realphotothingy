@@ -20,6 +20,7 @@
 		0AA2C5521C180FAA001E2FE0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA2C5511C180FAA001E2FE0 /* CoreLocation.framework */; };
 		0AA2C5541C180FBB001E2FE0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA2C5531C180FBB001E2FE0 /* MapKit.framework */; };
 		0AA2C5561C181044001E2FE0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA2C5551C181044001E2FE0 /* CoreGraphics.framework */; };
+		0AD48A651C1934E800514669 /* addViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD48A641C1934E800514669 /* addViewController.m */; };
 		E599523B8A8DE0FFCF0718D7 /* libPods-realphotothing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D9C209614A1353B7A1F38F /* libPods-realphotothing.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		0AA2C5511C180FAA001E2FE0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0AA2C5531C180FBB001E2FE0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0AA2C5551C181044001E2FE0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0AD48A631C1934E800514669 /* addViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addViewController.h; sourceTree = "<group>"; };
+		0AD48A641C1934E800514669 /* addViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addViewController.m; sourceTree = "<group>"; };
 		3455AE9DA49C499D47ED64DB /* Pods-realphotothing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realphotothing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-realphotothing/Pods-realphotothing.debug.xcconfig"; sourceTree = "<group>"; };
 		5BC1978E9EF4D95E8269A7DB /* Pods-realphotothing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-realphotothing.release.xcconfig"; path = "Pods/Target Support Files/Pods-realphotothing/Pods-realphotothing.release.xcconfig"; sourceTree = "<group>"; };
 		84D9C209614A1353B7A1F38F /* libPods-realphotothing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-realphotothing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +153,8 @@
 				0AA2C5201C180E8A001E2FE0 /* ViewController.h */,
 				0AA2C5211C180E8A001E2FE0 /* ViewController.m */,
 				0AA2C5231C180E8A001E2FE0 /* Main.storyboard */,
+				0AD48A631C1934E800514669 /* addViewController.h */,
+				0AD48A641C1934E800514669 /* addViewController.m */,
 				0AA2C5261C180E8A001E2FE0 /* Assets.xcassets */,
 				0AA2C5281C180E8A001E2FE0 /* LaunchScreen.storyboard */,
 				0AA2C52B1C180E8A001E2FE0 /* Info.plist */,
@@ -367,6 +372,7 @@
 			files = (
 				0AA2C5221C180E8A001E2FE0 /* ViewController.m in Sources */,
 				0AA2C51F1C180E8A001E2FE0 /* AppDelegate.m in Sources */,
+				0AD48A651C1934E800514669 /* addViewController.m in Sources */,
 				0AA2C51C1C180E8A001E2FE0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
