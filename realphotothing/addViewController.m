@@ -15,10 +15,34 @@
 @implementation addViewController{
     IBOutletCollection(UIImageView) NSArray *image;
     __weak IBOutlet UIButton *choosePhoto;
+    __weak IBOutlet UITextField *title;
+    __weak IBOutlet UITextField *description;
 }
 
 
 @synthesize miniMapView;
+- (IBAction)done:(id)sender {
+    NSArray *locations;
+    CLLocation *newLocation = [locations objectAtIndex:0];
+    latitude_UserLocation = newLocation.coordinate.latitude;
+    longitude_UserLocation = newLocation.coordinate.longitude;
+    NSLog(@"%f, %f",newLocation.coordinate.latitude, newLocation.coordinate.longitude);
+    [objLocationManager stopUpdatingLocation];
+    [self loadMapView];
+    
+    CLLocationCoordinate2D pinlocation;
+    pinlocation.latitude = 51.3883454; //set latitude of selected coordinate ;
+    pinlocation.longitude = 1.4368011;
+    //set longitude of selected coordinate;
+    
+    // Create Annotation point
+    MKPointAnnotation *Pin = [[MKPointAnnotation alloc]init];
+    Pin.coordinate = pinlocation;
+    Pin.title = title.text;
+    Pin.subtitle = description.text;
+    
+    // add annotation to mapview
+}
 
 - (IBAction)photoStream:(id)sender {
     UIImagePickerController * picker = [[UIImagePickerController alloc] init];
@@ -32,28 +56,30 @@
     } else {
         picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     }
+    image = picker;
     
     [self presentModalViewController:picker animated:YES];
     
 }
 
 - (IBAction)takePhoto:(id)sender {
-    UIImagePickerController * picker = [[UIImagePickerController alloc] init];
-    
-    // Don't forget to add UIImagePickerControllerDelegate in your .h
-    picker.delegate = self;
-    
-    if((UIButton *) sender == choosePhoto) {
-        picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-        
-    } else {
-        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    
-    [self presentModalViewController:picker animated:YES];
+    [self takePhoto];
 }
 
-
+-(void)takePhoto {
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+#if TARGET_IPHONE_SIMULATOR
+    imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+#else
+    imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+#endif
+    imagePickerController.editing = YES;
+    imagePickerController.delegate = (id)self;
+    
+    [self presentModalViewController:imagePickerController animated:YES];
+    
+    
+}
 
 - (void)viewDidLoad
 {
