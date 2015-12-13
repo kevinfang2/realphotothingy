@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -64,18 +64,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PUZ-km-nJL">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PUZ-km-nJL">
                                 <rect key="frame" x="20" y="60" width="560" height="228"/>
                             </mapView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-Gp-wtP">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-Gp-wtP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <barButtonItem title="Cancel" id="tBV-ba-kN3">
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" id="Yor-qW-Wat"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mgu-N1-OPg"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qFh-n7-k2G"/>
                                     <barButtonItem title="Done" id="DKK-zH-R0C">
                                         <connections>
                                             <action selector="done:" destination="aTB-S9-ceX" id="u5Q-Jn-d4e"/>
@@ -84,75 +84,88 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera" highlightedImage="camera" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-uW-Pjx">
-                                <rect key="frame" x="20" y="476" width="81" height="81"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="camera" highlightedImage="camera" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-uW-Pjx" userLabel="imageView">
+                                <rect key="frame" x="20" y="467" width="81" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="ITD-9W-ZOq"/>
+                                    <constraint firstAttribute="width" secondItem="sFi-uW-Pjx" secondAttribute="height" multiplier="1:1" id="UiT-Zl-AuI"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaF-Dv-des">
-                                <rect key="frame" x="173" y="488" width="70" height="70"/>
-                                <state key="normal" title="Button" image="]"/>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UBM-Mi-exi">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UBM-Mi-exi">
                                 <rect key="frame" x="103" y="342" width="463" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eo-20-Du6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7eo-20-Du6">
                                 <rect key="frame" x="103" y="406" width="463" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3c-oK-uIu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3c-oK-uIu">
                                 <rect key="frame" x="20" y="342" width="34" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urq-nH-BCF">
+                            <label opaque="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urq-nH-BCF">
                                 <rect key="frame" x="20" y="415" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaF-Dv-des">
+                                <rect key="frame" x="103" y="476" width="70" height="70"/>
+                                <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="aTB-S9-ceX" eventType="touchUpInside" id="Xif-kI-dff"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZx-oU-B5Y">
-                                <rect key="frame" x="343" y="508" width="147" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="QZx-oU-B5Y" secondAttribute="height" multiplier="163:30" constant="-3" id="5mX-5y-psP"/>
-                                    <constraint firstAttribute="height" constant="30" id="SKo-dm-aOM"/>
-                                    <constraint firstAttribute="height" constant="30" id="gGM-l0-lNW"/>
-                                </constraints>
+                                <rect key="frame" x="362" y="485" width="88" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Photostream"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5mX-5y-psP"/>
-                                        <exclude reference="SKo-dm-aOM"/>
-                                        <exclude reference="gGM-l0-lNW"/>
-                                    </mask>
-                                </variation>
                                 <connections>
-                                    <action selector="photoStream:" destination="aTB-S9-ceX" eventType="touchUpInside" id="hBN-36-ewx"/>
+                                    <action selector="photoStream:" destination="aTB-S9-ceX" eventType="touchUpInside" id="aNw-8q-Z54"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="UBM-Mi-exi" secondAttribute="trailing" constant="34" id="8Zq-rL-y0T"/>
+                            <constraint firstItem="UBM-Mi-exi" firstAttribute="top" secondItem="PUZ-km-nJL" secondAttribute="bottom" constant="54" id="Co0-e2-T8R"/>
+                            <constraint firstItem="PaF-Dv-des" firstAttribute="top" secondItem="7eo-20-Du6" secondAttribute="bottom" constant="40" id="EhQ-Hd-Det"/>
+                            <constraint firstItem="QZx-oU-B5Y" firstAttribute="top" secondItem="7eo-20-Du6" secondAttribute="bottom" constant="46" id="IpP-ba-cGD"/>
+                            <constraint firstAttribute="trailing" secondItem="xU3-Gp-wtP" secondAttribute="trailing" id="IuG-hr-kaC"/>
+                            <constraint firstItem="sFi-uW-Pjx" firstAttribute="top" secondItem="Urq-nH-BCF" secondAttribute="bottom" constant="31" id="Xkg-RL-XT6"/>
+                            <constraint firstItem="E3c-oK-uIu" firstAttribute="top" secondItem="PUZ-km-nJL" secondAttribute="bottom" constant="54" id="Z0V-it-5qt"/>
+                            <constraint firstItem="PUZ-km-nJL" firstAttribute="leading" secondItem="m1B-sg-Tws" secondAttribute="leading" constant="20" id="Zfq-TA-EpL"/>
+                            <constraint firstItem="QZx-oU-B5Y" firstAttribute="centerX" secondItem="m1B-sg-Tws" secondAttribute="centerX" constant="105.5" id="Zxh-Qc-6C6"/>
+                            <constraint firstAttribute="trailing" secondItem="PUZ-km-nJL" secondAttribute="trailing" constant="20" id="cOO-cT-Lc1"/>
+                            <constraint firstItem="QZx-oU-B5Y" firstAttribute="centerY" relation="lessThanOrEqual" secondItem="m1B-sg-Tws" secondAttribute="centerY" constant="200" id="eTq-gw-iTN"/>
+                            <constraint firstItem="Urq-nH-BCF" firstAttribute="top" secondItem="E3c-oK-uIu" secondAttribute="bottom" constant="45" id="f68-KL-Zzk"/>
+                            <constraint firstItem="xU3-Gp-wtP" firstAttribute="top" secondItem="m1B-sg-Tws" secondAttribute="top" id="kF6-y2-cpH"/>
+                            <constraint firstItem="PUZ-km-nJL" firstAttribute="top" secondItem="xU3-Gp-wtP" secondAttribute="bottom" id="loP-zT-XHb"/>
+                            <constraint firstItem="7eo-20-Du6" firstAttribute="top" secondItem="UBM-Mi-exi" secondAttribute="bottom" constant="34" id="nNY-CK-yk6"/>
+                            <constraint firstItem="xU3-Gp-wtP" firstAttribute="leading" secondItem="m1B-sg-Tws" secondAttribute="leading" id="nWX-2v-qvS"/>
+                            <constraint firstAttribute="trailing" secondItem="7eo-20-Du6" secondAttribute="trailing" constant="34" id="rzE-LC-DaF"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="choosePhoto" destination="QZx-oU-B5Y" id="20G-D8-6kd"/>
                         <outlet property="description" destination="7eo-20-Du6" id="MtL-mg-yIe"/>
+                        <outlet property="imageView" destination="sFi-uW-Pjx" id="78g-mv-ah3"/>
                         <outlet property="miniMapView" destination="PUZ-km-nJL" id="aom-eP-zoz"/>
                         <outlet property="title" destination="UBM-Mi-exi" id="a5I-ff-0Rr"/>
-                        <outletCollection property="image" destination="sFi-uW-Pjx" id="aft-DL-Ph5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gT-5T-bb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="260"/>
+            <point key="canvasLocation" x="989" y="260"/>
         </scene>
     </scenes>
     <resources>
-        <image name="]" width="128" height="128"/>
         <image name="camera" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -14,5 +14,6 @@
     double latitude_UserLocation, longitude_UserLocation;
 }
 @property (weak, nonatomic) IBOutlet MKMapView *miniMapView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
